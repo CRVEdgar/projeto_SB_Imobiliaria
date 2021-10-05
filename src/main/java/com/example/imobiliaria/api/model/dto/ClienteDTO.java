@@ -16,6 +16,4 @@ public class ClienteDTO {
     private String email;
     private Date dt_nascimento;
 
-//    @Temporal(TemporalType.DATE)
-
 }

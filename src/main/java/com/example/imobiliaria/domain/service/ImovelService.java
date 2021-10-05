@@ -37,7 +37,7 @@ public class ImovelService {
     }
 
     public List<Imoveis> findAll(){
-        List<Imoveis> imoveis = findAll();
+        List<Imoveis> imoveis = imovelRepository.findAll();
         return imoveis;
     }
 
