@@ -23,7 +23,6 @@ public class ClienteService {
 
     @Transactional
     public Cliente save(Cliente cliente) {
-        System.out.println("DATA DE ANIVERSARIO: " + cliente.getDt_nascimento());
         return clienteRepository.save(cliente);
     }
 
