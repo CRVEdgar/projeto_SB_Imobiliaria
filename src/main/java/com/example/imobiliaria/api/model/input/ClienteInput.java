@@ -1,5 +1,6 @@
 package com.example.imobiliaria.api.model.input;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
@@ -26,5 +27,6 @@ public class ClienteInput {
     private String email;
 
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dt_nascimento;
 }

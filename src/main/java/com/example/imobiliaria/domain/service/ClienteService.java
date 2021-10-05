@@ -23,6 +23,7 @@ public class ClienteService {
 
     @Transactional
     public Cliente save(Cliente cliente) {
+        System.out.println("DATA DE ANIVERSARIO: " + cliente.getDt_nascimento());
         return clienteRepository.save(cliente);
     }
 
@@ -43,8 +44,9 @@ public class ClienteService {
     @Transactional
     public Cliente update(Long clienteId, Cliente cliente) {
         Cliente clienteAtual = findById(clienteId);
+        cliente.setId(clienteAtual.getId());
 
-        return save(clienteAtual);
+        return save(cliente);
     }
 
     public Cliente findById(Long clienteId){
