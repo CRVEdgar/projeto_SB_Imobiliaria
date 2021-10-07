@@ -1,5 +1,6 @@
 package com.example.imobiliaria.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -31,6 +32,7 @@ public class Cliente {
     @Temporal(TemporalType.DATE)
     private Date dt_nascimento;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private Set<Locacao> locacao = new LinkedHashSet<>();
 }

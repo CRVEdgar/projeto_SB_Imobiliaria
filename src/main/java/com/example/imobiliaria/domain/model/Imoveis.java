@@ -1,5 +1,6 @@
 package com.example.imobiliaria.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -29,6 +30,7 @@ public class Imoveis {
     private BigDecimal valor_aluguel_suge;
     private String obs;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "imovel", cascade = CascadeType.ALL)
     private Set<Locacao> locacao = new LinkedHashSet<>();
 }

@@ -1,5 +1,6 @@
 package com.example.imobiliaria.domain.service;
 
+import com.example.imobiliaria.api.model.dto.LocacaoDTO;
 import com.example.imobiliaria.domain.exception.LocacaoNaoEncontradaException;
 import com.example.imobiliaria.domain.exception.NegocioException;
 import com.example.imobiliaria.domain.model.Alugueis;
@@ -7,6 +8,8 @@ import com.example.imobiliaria.domain.model.Locacao;
 import com.example.imobiliaria.domain.repository.AlugueisRepository;
 import com.example.imobiliaria.domain.repository.LocacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,6 +57,10 @@ public class AluguelService {
 
         locacao.setAtivo(0);
         locacaoService.save(locacao);
+    }
+
+    public Page<Locacao> buscaPaginadadeAtivos(Pageable paginacao) {
+        return locacaoRepository.findByAtivo(1, paginacao);
     }
 
 }

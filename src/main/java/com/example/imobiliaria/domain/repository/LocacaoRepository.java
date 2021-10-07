@@ -1,6 +1,9 @@
 package com.example.imobiliaria.domain.repository;
 
+import com.example.imobiliaria.api.model.dto.LocacaoDTO;
 import com.example.imobiliaria.domain.model.Locacao;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,5 +19,8 @@ public interface LocacaoRepository extends JpaRepository<Locacao, Long> {
 
     Optional<Locacao> findByAtivoAndId(int ativo, Long id);
 
-    Optional<Locacao> findByAtivo(int ativo);
+    //Optional<Locacao> findByAtivo(int ativo);
+
+    Page<Locacao> findByAtivo(int ativo, Pageable paginacao);
+
 }
