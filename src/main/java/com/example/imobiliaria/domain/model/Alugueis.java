@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -20,7 +21,7 @@ public class Alugueis {
     @Temporal(TemporalType.DATE)
     private Date dt_vencimento;
 
-    private Double valor_pago;
+    private BigDecimal valor_pago;
     private String obs;
 
     @ManyToOne

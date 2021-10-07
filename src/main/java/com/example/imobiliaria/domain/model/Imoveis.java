@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -25,7 +26,7 @@ public class Imoveis {
     private Integer banheiros;
     private Integer suites;
     private Integer metragem;
-    private Double valor_aluguel_suge;
+    private BigDecimal valor_aluguel_suge;
     private String obs;
 
     @OneToMany(mappedBy = "imovel", cascade = CascadeType.ALL)

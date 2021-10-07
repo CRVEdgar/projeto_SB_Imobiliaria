@@ -41,7 +41,7 @@ public class ImoveisCrontroller {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ImoveisDTO adicionar(@RequestBody ImovelInput imovelInput) {
+    public ImoveisDTO adicionar(@RequestBody @Valid ImovelInput imovelInput) {
         return imoveisConvertAssembler
                 .convert_para_DTO(imovelService.save(
                         imoveisConvertDISAssembler.convert_paraClienteDomain(imovelInput)
@@ -49,7 +49,7 @@ public class ImoveisCrontroller {
     }
 
     @PutMapping("/{imoveilId}")
-    public ImoveisDTO atualizar(@PathVariable Long imoveilId, @RequestBody ImovelInput imovelInput) {
+    public ImoveisDTO atualizar(@PathVariable Long imoveilId, @RequestBody @Valid ImovelInput imovelInput) {
         return imoveisConvertAssembler
                 .convert_para_DTO(imovelService.update(
                         imoveilId, imoveisConvertDISAssembler.convert_paraClienteDomain(imovelInput)

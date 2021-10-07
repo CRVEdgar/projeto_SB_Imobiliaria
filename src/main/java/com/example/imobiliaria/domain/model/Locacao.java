@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,7 +22,7 @@ public class Locacao {
     private int ativo;
     private int dia_vencimento;
     private Double perc_multa;
-    private Double valor_alugue;
+    private BigDecimal valor_alugue;
     private String obs;
 
     @Temporal(TemporalType.DATE)
